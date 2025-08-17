@@ -1,20 +1,20 @@
 package Lesson_1
 
-const val  year: UShort = 1961u
+const val  YEAR: Int = 1961
 
 fun main() {
 
-    var  hour: UByte = 9u
-    var  minute: UByte = 7u
+    var  hour: Int = 9
+    var  minute: Int = 7
 
-    println(year)
+    println(YEAR)
     println(hour)
     println(minute)
 
     println()
 
-    hour = 10u
-    minute = 55u
+    hour = 10
+    minute = 55
 
     println("$hour:$minute")
 
