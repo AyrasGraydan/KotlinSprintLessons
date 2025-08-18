@@ -8,14 +8,13 @@ fun main() {
     var  minute: Int = 7
 
     println(YEAR)
-    println(hour)
-    println(minute)
+    println(String.format("%02d:%02d", hour, minute))
 
     println()
 
     hour = 10
     minute = 55
 
-    println("$hour:$minute")
+    println(String.format("%02d:%02d", hour, minute))
 
 }
