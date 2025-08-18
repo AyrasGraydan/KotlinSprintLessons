@@ -1,5 +1,8 @@
 package Lesson_2
 
+const val MINUTE_IN_SECONDS = 60
+const val DAY_IN_HOURS = 24
+
 fun main() {
 
 //    выехал в 9:39 и будет в пути 457 минут
@@ -12,11 +15,10 @@ fun main() {
     val travelTime = 457
 
 
+    val mmAll = travelTime + hhDeparture * MINUTE_IN_SECONDS + mmDeparture
 
-    val mmAll = travelTime + hhDeparture * 60 + mmDeparture
-
-    val hhArrival = mmAll / 60
-    val mmArrival = mmAll % 60
+    val hhArrival = mmAll / MINUTE_IN_SECONDS
+    val mmArrival = mmAll % MINUTE_IN_SECONDS
 
     println(String.format("%02d:%02d", hhArrival, mmArrival))
 
@@ -27,19 +29,19 @@ fun main() {
 
 }
 
-fun arrivalTime(hhDeparture: Int, mmDeparture: Int, travelTime: Int ): String {
+fun arrivalTime(hhDeparture: Int, mmDeparture: Int, travelTime: Int): String {
 
-    val mmAll = travelTime + hhDeparture * 60 + mmDeparture
+    val mmAll = travelTime + hhDeparture * MINUTE_IN_SECONDS + mmDeparture
 
-    val hhArrival = mmAll / 60 % 24
-    val mmArrival = mmAll % 60
+    val hhArrival = mmAll / MINUTE_IN_SECONDS % DAY_IN_HOURS
+    val mmArrival = mmAll % MINUTE_IN_SECONDS
 
-    val day = mmAll / 60 / 24
+    val day = mmAll / MINUTE_IN_SECONDS / DAY_IN_HOURS
 
 
     var stringTime: String
 
-    when(day){
+    when (day) {
 
 
         0 -> stringTime = """
@@ -56,14 +58,14 @@ fun arrivalTime(hhDeparture: Int, mmDeparture: Int, travelTime: Int ): String {
         
     """.trimIndent()
 
-        in 2 until 5 ->  stringTime = """
+        in 2 until 5 -> stringTime = """
         
         Прибытие поезда: 
         Через $day дня в ${String.format("%02d:%02d", hhArrival, mmArrival)}
         
     """.trimIndent()
 
-        else ->  stringTime = """
+        else -> stringTime = """
         
         Прибытие поезда: 
         Через $day дней в ${String.format("%02d:%02d", hhArrival, mmArrival)}
