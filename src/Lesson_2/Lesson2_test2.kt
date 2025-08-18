@@ -15,13 +15,15 @@ fun main() {
 
     val paymentExpensesEmployees = employees * employeesWage
     val paymentExpensesAll = interns * internsWage + paymentExpensesEmployees
-    val averageWage = paymentExpensesAll/ (employees + interns)
+    val averageWage = paymentExpensesAll / (employees + interns)
 
-    println("""
+    println(
+        """
         $paymentExpensesEmployees
         $paymentExpensesAll
         $averageWage
-    """.trimIndent())
+    """.trimIndent()
+    )
 
 
     //variant 2
@@ -32,20 +34,20 @@ fun main() {
     println(expenses(50, 30000))
     println(expenses(50, 30000) + expenses(30, 20000))
 
-    println(arithmeticMean(mapOf(50 to 30000, 30 to 20000)))
+    println(arithmeticMean(mapOf(employees to employeesWage, interns to internsWage)))
     // "количество сотрудников с одинаковым достатком" to "ЗП"
 }
 
 fun expenses(employees: Int, wage: Int) = employees * wage
 
-fun arithmeticMean(values: Map<Int, Int>): Int{
-        var amount = 0
-        var quantity = 0
-        values.forEach { numberOfEmployees, wage ->
-            amount += numberOfEmployees * wage
-            quantity += numberOfEmployees
-        }
-        return amount / quantity
+fun arithmeticMean(values: Map<Int, Int>): Int {
+    var amount = 0
+    var quantity = 0
+    values.forEach { numberOfEmployees, wage ->
+        amount += numberOfEmployees * wage
+        quantity += numberOfEmployees
+    }
+    return amount / quantity
 }
 
 
