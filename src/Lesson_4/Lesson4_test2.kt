@@ -1,20 +1,20 @@
 package Lesson_4
 
-fun main() {
+const val MIN_WEIGHT_AVERAGE = 35
+const val MAX_WEIGHT_AVERAGE = 100
+const val MAX_VOLUME_AVERAGE = 100
 
-    val minWeightAverage = 35
-    val maxWeightAverage = 100
-    val maxVolumeAverage = 100
+fun main() {
 
     var weightInKg = 20
     var volumeInLiters = 80
 
-    println("Груз с весом $weightInKg кг и объемом $volumeInLiters л соответствует категории 'Average': ${minWeightAverage < weightInKg && weightInKg <= maxWeightAverage && volumeInLiters < maxVolumeAverage}")
+    println("Груз с весом $weightInKg кг и объемом $volumeInLiters л соответствует категории 'Average': ${MIN_WEIGHT_AVERAGE < weightInKg && weightInKg <= MAX_WEIGHT_AVERAGE && volumeInLiters < MAX_VOLUME_AVERAGE}")
 
     weightInKg = 50
     volumeInLiters = 100
 
-    println("Груз с весом $weightInKg кг и объемом $volumeInLiters л соответствует категории 'Average': ${minWeightAverage < weightInKg && weightInKg <= maxWeightAverage && volumeInLiters < maxVolumeAverage}")
+    println("Груз с весом $weightInKg кг и объемом $volumeInLiters л соответствует категории 'Average': ${MIN_WEIGHT_AVERAGE < weightInKg && weightInKg <= MAX_WEIGHT_AVERAGE && volumeInLiters < MAX_VOLUME_AVERAGE}")
 
 
 }
