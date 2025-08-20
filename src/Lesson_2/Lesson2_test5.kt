@@ -8,11 +8,11 @@ fun main() {
     val deposit = 70000
     var years = 20
 
-    val interestRate = 0.167
+    val interestRate = 16.7
     var revenue = deposit.toDouble()
 
     for (i in 0 until years){
-        revenue += (revenue * interestRate).toDouble()
+        revenue += (revenue * interestRate/100).toDouble()
     }
 
     println("%.3f".format(revenue))
