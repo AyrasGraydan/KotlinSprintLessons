@@ -2,9 +2,6 @@ package Lesson_2
 
 fun main() {
 
-//    employees 50 / 30 000
-//    interns 30 / 20 000
-
     val employees = 50
     val interns = 30
 
