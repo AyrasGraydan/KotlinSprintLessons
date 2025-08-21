@@ -1,11 +1,8 @@
 package Lesson_2
 
 const val MINUTE_IN_SECONDS = 60
-const val DAY_IN_HOURS = 24
 
 fun main() {
-
-//    выехал в 9:39 и будет в пути 457 минут
 
     val hhDeparture = 9
     val mmDeparture = 39
