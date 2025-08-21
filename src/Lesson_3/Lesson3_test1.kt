@@ -4,15 +4,11 @@ import java.time.LocalTime
 
 fun main() {
 
-//    утро 4:00 до 12:00
-//    день 12:00 до 22:00
-//    ночь 22:00 до 4:00
-
     val name = "Ayars"
 
     val currentTime = LocalTime.now()
 
-    var hh = currentTime.hour
+    val hh = currentTime.hour
 
 
     val morningString = """
@@ -32,16 +28,5 @@ fun main() {
         in 22..24 -> println(nightString)
         in 0 until 4 -> println(nightString)
     }
-
-//    val currentDate = sdf.format(Date())
-
-//    SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-
-//    dd: День месяца (01-31)
-//    M: Номер месяца в году (1-12). Рекомендуется MM.
-//    yyyy: Год (четыре цифры)
-//    hh: Час (01-12, AM/PM)
-//    mm: Минуты (00-59)
-//    ss: Секунды (00-59)
 
 }
