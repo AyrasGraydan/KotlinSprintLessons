@@ -1,19 +1,15 @@
 package Lesson_2
 
+const val FULL_PERCENTAGE = 100
+
 fun main() {
 
-//    – Процентная ставка 16,7%
-//    – Ответ должен получиться таким 1536438.428
-
-    val deposit = 70000
-    var years = 20
+    val deposit = 70000.0
+    val years = 20
 
     val interestRate = 16.7
-    var revenue = deposit.toDouble()
 
-    for (i in 0 until years){
-        revenue += (revenue * interestRate/100).toDouble()
-    }
+    val revenue = deposit * Math.pow(1 + interestRate / FULL_PERCENTAGE, years.toDouble())
 
     println("%.3f".format(revenue))
 }
