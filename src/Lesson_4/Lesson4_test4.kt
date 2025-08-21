@@ -2,11 +2,6 @@ package Lesson_4
 
 fun main() {
 
-//    Упражнения для рук:    true
-//    Упражнения для ног:    false
-//    Упражнения для спины:  false
-//    Упражнения для пресса: true
-
     var armExercises = true
     var legExercises = false
     var backExercises = false
