@@ -10,23 +10,24 @@ fun main() {
 
     val hh = currentTime.hour
 
+    val morningStringPart1 = """
+    |Доброе утро?
+    |Что вы хотите этим сказать""".trimMargin()
 
-    val morningString = """
-     Доброе утро?
-     Что вы хотите этим сказать, $name?
-     Просто желаете мне доброго утра? 
-     Или утверждаете, что утро сегодня доброе — неважно,
-     что я о нём думаю? 
-     Или имеете в виду, что нынешним утром все должны быть добрыми?
-"""
-    val dayString = "Добрый день, $name!"
-    val nightString = "Что не спим, $name?"
+    val morningStringPart2 = """
+    |Просто желаете мне доброго утра? 
+    |Или утверждаете, что утро сегодня доброе — неважно,
+    |что я о нём думаю? 
+    |Или имеете в виду, что нынешним утром все должны быть добрыми?""".trimMargin()
+
+    val dayString = "Добрый день"
+    val nightString = "Что не спим"
 
     when (hh) {
-        in 4 until 12 -> println(morningString)
-        in 12 until 22 -> println(dayString)
-        in 22..24 -> println(nightString)
-        in 0 until 4 -> println(nightString)
+        in 4 until 12 -> println("$morningStringPart1, $name? \n$morningStringPart2")
+        in 12 until 22 -> println("$dayString, $name!")
+        in 22..24 -> println("$nightString, $name?")
+        in 0 until 4 -> println("$nightString, $name?")
     }
 
 }
