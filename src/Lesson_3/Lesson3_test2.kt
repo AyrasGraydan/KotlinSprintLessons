@@ -2,14 +2,15 @@ package Lesson_3
 
 fun main() {
 
-    val name = "Татьяна"
-    val secondName = "Андреева"
-    val surname = "Сергеевна"
+    var name = "Татьяна"
+    var secondName = "Андреева"
+    var surname = "Сергеевна"
 
     var age = 20
 
     println("$secondName $name $surname, $age")
 
+    secondName = "Сидорова"
     age += 2
 
     println("$secondName $name $surname, $age")
