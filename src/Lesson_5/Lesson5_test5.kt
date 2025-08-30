@@ -5,16 +5,14 @@ import java.io.IO.readln
 
 fun main() {
 
-    val random = Random
     val minNumber = 0
     val maxNumber = 42
 
-
     val randomNumberSet = mutableSetOf<Int>()
-    repeat(3) { randomNumberSet.add(random.nextInt(minNumber, maxNumber + 1)) }
+    repeat(3) { randomNumberSet.add(Random.nextInt(minNumber, maxNumber + 1)) }
 
     if (randomNumberSet.size != 3) {
-        randomNumberSet.add(random.nextInt(minNumber, maxNumber + 1))
+        randomNumberSet.add(Random.nextInt(minNumber, maxNumber + 1))
     }
 
     val userNumbers = mutableSetOf<Int>(
