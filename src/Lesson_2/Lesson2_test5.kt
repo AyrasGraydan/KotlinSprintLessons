@@ -1,7 +1,5 @@
 package Lesson_2
 
-const val FULL_PERCENTAGE = 100
-
 fun main() {
 
     val deposit = 70000.0
