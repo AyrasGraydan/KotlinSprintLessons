@@ -4,7 +4,6 @@ import java.io.IO.readln
 import kotlin.random.Random
 
 fun main() {
-    //Добро пожаловать!
 
     val minNumber = 1
     val maxNumber = 9
