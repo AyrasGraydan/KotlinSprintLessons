@@ -14,8 +14,8 @@ fun main() {
     }
 
     when {
-        timeElapsed == 1 -> println("Прошла $timeElapsed секунда")
-        timeElapsed in 2..4 -> println("Прошло $timeElapsed секунды")
-        timeElapsed > 4 -> println("Прошло $timeElapsed секунд")
+        timeElapsed % 100 == 1 -> println("Прошла $timeElapsed секунда")
+        timeElapsed % 100 in 2..4 -> println("Прошло $timeElapsed секунды")
+        timeElapsed % 100 > 4 -> println("Прошло $timeElapsed секунд")
     }
 }
