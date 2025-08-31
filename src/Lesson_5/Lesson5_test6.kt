@@ -16,8 +16,8 @@ fun main() {
 
     when {
         bodyMassIndex < 18.5 -> println("Недостаточная масса тела")
-        bodyMassIndex in 18.5..24.9 -> println("Нормальная масса тела")
-        bodyMassIndex in 25.0..29.9 -> println("Избыточная масса тела")
+        bodyMassIndex < 25 -> println("Нормальная масса тела")
+        bodyMassIndex < 30 -> println("Избыточная масса тела")
         bodyMassIndex >= 30.0 -> println("Ожирение")
         else -> println("Некорректное значение ИМТ")
     }
