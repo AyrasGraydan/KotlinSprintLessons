@@ -15,9 +15,12 @@ fun main() {
 
     println()
 
-    if ((absenceOfDamage == ABSENCE_OF_DAMAGE && numberOfCrew in FAVORABLE_MIN_NUMBER_OF_CREW..FAVORABLE_MAX_NUMBER_OF_CREW && amountOfBoxes > FAVORABLE_AMOUNT_OF_BOXES) or (numberOfCrew == 70 && amountOfBoxes >= 50 && weather == FAVORABLE_WEATHER))
+    if ((absenceOfDamage == ABSENCE_OF_DAMAGE
+                && numberOfCrew in FAVORABLE_MIN_NUMBER_OF_CREW..FAVORABLE_MAX_NUMBER_OF_CREW &&
+                amountOfBoxes > FAVORABLE_AMOUNT_OF_BOXES) or
+        (numberOfCrew == 70 && amountOfBoxes >= 50 && weather == FAVORABLE_WEATHER)
+    )
         println("Корабль может отправится в плавание")
     else println("Корабль вероятно утонет")
-
 
 }
