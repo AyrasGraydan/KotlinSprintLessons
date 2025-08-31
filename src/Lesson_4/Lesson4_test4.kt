@@ -7,12 +7,16 @@ fun main() {
     var backExercises = false
     var abExercises = true
 
-    val dayLast = 5
+    val dayNumber = 5
 
-    armExercises = if (dayLast % 2 == 1) armExercises else !armExercises
-    legExercises = if (dayLast % 2 == 1) legExercises else !legExercises
-    backExercises = if (dayLast % 2 == 1) backExercises else !backExercises
-    abExercises = if (dayLast % 2 == 1) abExercises else !abExercises
+    val isEven =  if (dayNumber % 2 == 0) true else false
+
+    if (isEven){
+        armExercises = !armExercises
+        legExercises = !legExercises
+        backExercises = !backExercises
+        abExercises = !abExercises
+    }
 
     println(
         """|Упражнения для рук:      $armExercises
