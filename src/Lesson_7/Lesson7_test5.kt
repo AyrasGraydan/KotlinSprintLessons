@@ -24,10 +24,13 @@ fun main() {
                 if (randomNumber == 0) {
                     val randomNumber = (Math.random() * 2).toInt()
 
-                    if (randomNumber == 0) password += i.uppercase()
-                    else password += i
+                    when (randomNumber) {
+                        0 -> password += i.uppercase()
+                        1 -> password += i
+                    }
                 }
             }
+
         } else {
             for (i in 0..9) {
                 val randomNumber = (Math.random() * DECIMAL_NUMBER_SYSTEM).toInt()
