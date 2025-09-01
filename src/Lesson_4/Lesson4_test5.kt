@@ -1,5 +1,5 @@
 
-const val IS_DAMAGED = false
+const val IS_DAMAGED = true
 const val FAVORABLE_MIN_NUMBER_OF_CREW = 55
 const val FAVORABLE_MAX_NUMBER_OF_CREW = 70
 const val FAVORABLE_AMOUNT_OF_BOXES = 50
@@ -7,8 +7,8 @@ const val IS_WEATHER_CLEAR = true
 
 fun main() {
 
-    print("Есть ли у корабля повреждения? да/skip ")
-    val isDamaged: Boolean = readln() == "да"
+    print("Есть ли у корабля повреждения? true/false ")
+    val isDamaged: Boolean = readln().toBoolean()
 
     print("Kоличество экипажа на корабле: ")
     val numberOfCrew: Int = readln().toInt()
@@ -16,12 +16,12 @@ fun main() {
     print("Kоличество ящиков провизи на корабле: ")
     val amountOfBoxes: Int = readln().toInt()
 
-    print("Благоприятная ли погода? да/skip ")
-    val isWeatherClear: Boolean = readln() == "да"
+    print("Благоприятная ли погода? true/false ")
+    val isWeatherClear: Boolean = readln().toBoolean()
 
     println()
 
-    if ((isDamaged == IS_DAMAGED
+    if ((isDamaged != IS_DAMAGED
                 && numberOfCrew in FAVORABLE_MIN_NUMBER_OF_CREW..FAVORABLE_MAX_NUMBER_OF_CREW &&
                 amountOfBoxes > FAVORABLE_AMOUNT_OF_BOXES) ||
         (numberOfCrew == FAVORABLE_MAX_NUMBER_OF_CREW && amountOfBoxes >= FAVORABLE_AMOUNT_OF_BOXES && isWeatherClear == IS_WEATHER_CLEAR)
