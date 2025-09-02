@@ -4,10 +4,13 @@ import java.io.IO.readln
 
 fun main() {
 
-    val example = "5 + 2 = "
+    val number1 = 5
+    val number2 = 2
+
+    val example = "$number1 + $number2 = "
     val answer = readln(example).toInt()
 
 
-    if (answer == 7) println("Добро пожаловать")
+    if (answer == number1 + number2) println("Добро пожаловать")
     else println("Доступ запрещен")
 }
