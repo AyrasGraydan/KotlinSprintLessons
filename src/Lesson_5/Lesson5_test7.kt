@@ -1,14 +1,17 @@
 package Lesson_5
 
-import java.io.IO.readln
-
 const val FUEL_COUNTING_DISTANCE = 100
 
 fun main() {
 
-    val distance = readln("Введите расстояние в km: ").toFloat()
-    val fuelConsumptionPer100Km = readln("Введите рассход топлива на 100km в l: ").toFloat()
-    val fuelPrice = readln("Введите цену за литр топлива: ").toFloat()
+    print("Введите расстояние в km: ")
+    val distance = readln().toFloat()
+
+    print("Введите рассход топлива на 100km в l: ")
+    val fuelConsumptionPer100Km = readln().toFloat()
+
+    print("Введите цену за литр топлива: ")
+    val fuelPrice = readln().toFloat()
 
     val totalLiters = (distance * fuelConsumptionPer100Km) / FUEL_COUNTING_DISTANCE
     val fuelCost = totalLiters * fuelPrice
