@@ -2,15 +2,15 @@ package Lesson_8
 
 fun main() {
 
-    val arrayOfDishes = arrayOf("листья", "гренки", "пармезан", "соус", "мясо", "томаты")
+    val arrayOfIngredients = arrayOf("листья", "гренки", "пармезан", "соус", "мясо", "томаты")
 
     print("Введите названия блюда: ")
     val userDish = readln()
     var availabilityOfDish = false
 
-    for (i in arrayOfDishes) {
+    for (i in arrayOfIngredients) {
 
-        if (userDish == arrayOfDishes[arrayOfDishes.indexOf(i)]) availabilityOfDish = !availabilityOfDish
+        if (userDish == arrayOfIngredients[arrayOfIngredients.indexOf(i)]) availabilityOfDish = !availabilityOfDish
     }
 
     if (availabilityOfDish) println("Ингредиент \"$userDish\" в рецепте есть")
