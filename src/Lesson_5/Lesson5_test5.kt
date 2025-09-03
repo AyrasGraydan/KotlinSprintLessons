@@ -15,22 +15,9 @@ fun main() {
 
     while (userNumbers.size != 3) {
 
-        when (userNumbers.size) {
-
-            0 -> for (i in 1..3) {
-                print("Введите число №$i: ")
-                userNumbers.add(readln().toInt())
-            }
-
-            1 -> for (i in 2..3) {
-                print("Введите число №$i: ")
-                userNumbers.add(readln().toInt())
-            }
-
-            2 -> {
-                print("Введите число №3: ")
-                userNumbers.add(readln().toInt())
-            }
+        for (i in userNumbers.size until 3) {
+            print("Введите число №${i + 1}: ")
+            userNumbers.add(readln().toInt())
         }
 
         if (userNumbers.size != 3) println("Вы ввели одинаковые числа")
