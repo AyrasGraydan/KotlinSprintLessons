@@ -1,18 +1,19 @@
 package Lesson_5
 
-import java.io.IO.readln
-import kotlin.math.pow
-
 const val CENTIMETERS_IN_METERS = 100
 
 fun main() {
 
-    val weightKg = readln("Введите ваш вес в килограммах: ").toFloat()
-    val heightCm = readln("Введите ваш рост в сантиметрах: ").toFloat()
+    print("Введите ваш вес в килограммах: ")
+    val weightKg = readln().toFloat()
+
+    print("Введите ваш рост в сантиметрах: ")
+    val heightCm = readln().toFloat()
 
     val heightM = (heightCm / CENTIMETERS_IN_METERS).toDouble()
 
-    val bodyMassIndex = weightKg / heightM.pow(2.0).toFloat()
+    val bodyMassIndex = weightKg / Math.pow(heightM, 2.0)
+    println("Ваш ИМТ: ${String.format("%.2f", bodyMassIndex)}")
 
     when {
         bodyMassIndex < 18.5 -> println("Недостаточная масса тела")
