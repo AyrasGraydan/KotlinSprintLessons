@@ -1,14 +1,11 @@
 package Lesson_6
 
-import java.io.IO.readln
-import kotlin.random.Random
-
 fun main() {
 
     val minNumber = 1
     val maxNumber = 9
 
-    val number = Random.nextInt(minNumber, maxNumber + 1)
+    val number = (minNumber..maxNumber).random()
 
     var userNumber = 0
     var numberOfAttempts = 5
@@ -18,11 +15,30 @@ fun main() {
     while (userNumber != number && numberOfAttempts > 0) {
 
         when (numberOfAttempts) {
-            5 -> userNumber = readln("Введите ваш вариант: ").toInt()
-            4 -> userNumber = readln("У тебя еще есть шансы: ").toInt()
-            3 -> userNumber = readln("Ничего, бывает, попробуй еще раз: ").toInt()
-            2 -> userNumber = readln("Я начинаю терять веру в тебя: ").toInt()
-            1 -> userNumber = readln("Где ты свою удачу тратишь?: ").toInt()
+            5 -> {
+                print("Введите ваш вариант: ")
+                userNumber = readln().toInt()
+            }
+
+            4 -> {
+                print("У тебя еще есть шансы: ")
+                userNumber = readln().toInt()
+            }
+
+            3 -> {
+                print("Ничего, бывает, попробуй еще раз: ")
+                userNumber = readln().toInt()
+            }
+
+            2 -> {
+                print("Я начинаю терять веру в тебя: ")
+                userNumber = readln().toInt()
+            }
+
+            1 -> {
+                print("Где ты свою удачу тратишь?: ")
+                userNumber = readln().toInt()
+            }
         }
 
         numberOfAttempts--
@@ -32,5 +48,7 @@ fun main() {
 
     if (userNumber == number) println("Это была великолепная игра!")
     else println("Ты был близок!")
+
+    println("Загаданное число: $number")
 
 }
