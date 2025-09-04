@@ -1,23 +1,32 @@
 package Lesson_6
 
-import java.io.IO.readln
-
 fun main() {
 
-    val login = readln("Придумайте логин: ")
-    val password = readln("Придумайте пароль: ")
+    print("Придумайте логин: ")
+    val login = readln()
+
+    print("Придумайте пароль: ")
+    val password = readln()
 
     println()
 
-    var authorizationLogin = readln("Введите логин: ")
-    var authorizationPassword = readln("Введите логин: ")
+    print("Введите логин: ")
+    var authorizationLogin = readln()
+
+    print("Введите логин: ")
+    var authorizationPassword = readln()
 
     println()
 
     while (authorizationLogin != login || authorizationPassword != password) {
         println("Неверные данные")
-        authorizationLogin = readln("Введите логин: ")
-        authorizationPassword = readln("Введите логин: ")
+
+        print("Введите логин: ")
+        authorizationLogin = readln()
+
+        print("Введите логин: ")
+        authorizationPassword = readln()
+
         println()
     }
 
