@@ -11,7 +11,6 @@ fun main() {
 
     var numberOfAttempts = 3
 
-
     println("Отстои свою честь! Докажи, что ты не бот.")
 
     while (userNumber != number1 + number2 && numberOfAttempts > 0) {
