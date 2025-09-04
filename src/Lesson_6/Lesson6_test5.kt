@@ -1,8 +1,5 @@
 package Lesson_6
 
-import java.io.IO.readln
-import kotlin.random.Random
-
 fun main() {
 
     val minNumber = 1
@@ -20,19 +17,20 @@ fun main() {
     while (userNumber != number1 + number2 && numberOfAttempts > 0) {
 
         when (numberOfAttempts) {
-            2 -> println("Целься метче, воин!")
-            1 -> println("У тебя все шансы, сосредоточься...")
+            2 -> println("Ты справишься, старайся!")
+            1 -> println("У тебя еще все шансы, сосредоточься...")
         }
 
-        number1 = Random.nextInt(minNumber, maxNumber + 1)
-        number2 = Random.nextInt(minNumber, maxNumber + 1)
+        number1 = (minNumber..maxNumber).random()
+        number2 = (minNumber..maxNumber).random()
 
-        userNumber = readln("$number1 + $number2 = ").toInt()
+        print("$number1 + $number2 = ")
+        userNumber = readln().toInt()
 
         numberOfAttempts--
     }
 
-    if (userNumber == number1 + number2){
+    if (userNumber == number1 + number2) {
         println("Я верил, что ты чист!")
         println("Двери тебе открыты..")
     } else println("Серое и безжизненное существо...")
