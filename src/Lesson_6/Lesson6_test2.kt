@@ -1,10 +1,9 @@
 package Lesson_6
 
-import java.io.IO.readln
-
 fun main() {
 
-    var pauseTime = readln("Введите количество секунд: ").toInt()
+    print("Введите количество секунд: ")
+    var pauseTime = readln().toInt()
     var timeElapsed = 0
 
     while (pauseTime > 0) {
