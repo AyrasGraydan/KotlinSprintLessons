@@ -1,14 +1,15 @@
 package Lesson_5
 
-import java.io.IO.readln
-
 fun main() {
 
     val name = "Zaphod"
     val password = "PanGalactic"
 
-    val yourName = readln("Марвин печально запрашивает ваше имя: ")
-    val yourPassword = readln("Марвин не менее печально запрашивает ваш пароль: ")
+    print("Марвин печально запрашивает ваше имя: ")
+    val yourName = readln()
+
+    print("Марвин не менее печально запрашивает ваш пароль: ")
+    val yourPassword = readln()
 
     if (name == yourName) {
         passwordCheck(password, yourPassword)
@@ -16,8 +17,9 @@ fun main() {
         println("[глубоко вздыхает...] Вашего имени и пароля нет в базе данных...")
         println()
 
+        print("[вздыхает...] Хотите ли вы зарегистрироваться? да/нет ")
         val registerUser =
-            if (readln("[вздыхает...] Хотите ли вы зарегистрироваться? да/нет ") == "да") true; else false
+            if (readln() == "да") true; else false
 
         if (registerUser) {
 
@@ -48,7 +50,8 @@ fun passwordCheck(password: String, yourPassword: String, attempts: Int = 0) {
     } else if (attempts == 0) {
 
         val newAttempts = attempts + 1
-        val yourPasswordNew = readln("[вздыхает...] Пароль неверный, поробуйте еще раз: ")
+        print("[вздыхает...] Пароль неверный, поробуйте еще раз: ")
+        val yourPasswordNew = readln()
 
         passwordCheck(password, yourPasswordNew, newAttempts)
     } else {
