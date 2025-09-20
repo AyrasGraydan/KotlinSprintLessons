@@ -1,20 +1,17 @@
 package Lesson_6
 
+const val MILLISECONDS_PER_MINUTE = 1000
+
 fun main() {
 
     print("Введите количество секунд: ")
     var pauseTime = readln().toInt()
-    var timeElapsed = 0
 
-    while (pauseTime > 0) {
-        pauseTime--
-        timeElapsed++
-        Thread.sleep(1000)
-    }
+    Thread.sleep(pauseTime.toLong() * MILLISECONDS_PER_MINUTE)
 
     when {
-        timeElapsed % 100 == 1 -> println("Прошла $timeElapsed секунда")
-        timeElapsed % 100 in 2..4 -> println("Прошло $timeElapsed секунды")
-        timeElapsed % 100 > 4 -> println("Прошло $timeElapsed секунд")
+        pauseTime % 100 == 1 -> println("Прошла $pauseTime секунда")
+        pauseTime % 100 in 2..4 -> println("Прошло $pauseTime секунды")
+        pauseTime % 100 > 4 -> println("Прошло $pauseTime секунд")
     }
 }
