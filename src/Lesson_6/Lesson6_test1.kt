@@ -10,25 +10,19 @@ fun main() {
 
     println()
 
-    print("Введите логин: ")
-    var authorizationLogin = readln()
-
-    print("Введите логин: ")
-    var authorizationPassword = readln()
-
-    println()
-
-    while (authorizationLogin != login || authorizationPassword != password) {
-        println("Неверные данные")
-
+    do {
         print("Введите логин: ")
-        authorizationLogin = readln()
+        val authorizationLogin = readln()
 
-        print("Введите логин: ")
-        authorizationPassword = readln()
+        print("Введите пароль: ")
+        val authorizationPassword = readln()
 
         println()
-    }
+        if (authorizationLogin == login && authorizationPassword == password) break
+
+        println("Неверные данные")
+
+    } while (authorizationLogin != login || authorizationPassword != password)
 
     println("Авторизация прошла успешно")
 
