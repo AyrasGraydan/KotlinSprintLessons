@@ -15,32 +15,13 @@ fun main() {
     while (userNumber != number && numberOfAttempts > 0) {
 
         when (numberOfAttempts) {
-            5 -> {
-                print("Введите ваш вариант: ")
-                userNumber = readln().toInt()
-            }
-
-            4 -> {
-                print("У тебя еще есть шансы: ")
-                userNumber = readln().toInt()
-            }
-
-            3 -> {
-                print("Ничего, бывает, попробуй еще раз: ")
-                userNumber = readln().toInt()
-            }
-
-            2 -> {
-                print("Я начинаю терять веру в тебя: ")
-                userNumber = readln().toInt()
-            }
-
-            1 -> {
-                print("Где ты свою удачу тратишь?: ")
-                userNumber = readln().toInt()
-            }
+            5 -> print("Введите ваш вариант: ")
+            4 -> print("У тебя еще есть шансы: ")
+            3 -> print("Ничего, бывает, попробуй еще раз: ")
+            2 -> print("Я начинаю терять веру в тебя: ")
+            1 -> print("Где ты свою удачу тратишь?: ")
         }
-
+        userNumber = readln().toInt()
         numberOfAttempts--
     }
 
