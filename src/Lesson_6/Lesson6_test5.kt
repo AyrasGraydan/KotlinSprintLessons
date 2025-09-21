@@ -6,7 +6,6 @@ fun main() {
     val maxNumber = 9
 
     var numberOfAttempts = 3
-    var isResultRight = false
 
     println("Отстои свою честь! Докажи, что ты не бот.")
 
@@ -24,13 +23,13 @@ fun main() {
 
         numberOfAttempts--
 
-        if (userNumber == number1 + number2) isResultRight = true
+        if (userNumber == number1 + number2){
+            println("Я верил, что ты чист!")
+            println("Двери тебе открыты..")
+            return
+        }
 
     } while (userNumber != number1 + number2 && numberOfAttempts > 0)
 
-    if (isResultRight) {
-        println("Я верил, что ты чист!")
-        println("Двери тебе открыты..")
-    } else println("Серое и безжизненное существо...")
-
+println("Серое и безжизненное существо...")
 }
