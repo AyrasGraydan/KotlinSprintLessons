@@ -1,7 +1,5 @@
 package Lesson_7
 
-import kotlin.random.Random
-
 fun main() {
 
     val maxNumber = 9999
@@ -12,7 +10,7 @@ fun main() {
 
     while (userCode != code) {
 
-        code = Random.nextInt(minNumber, maxNumber)
+        code = (minNumber..maxNumber).random()
         println("Ваш код авторизации: $code")
 
         print("Введите ваш код авторизации: ")
