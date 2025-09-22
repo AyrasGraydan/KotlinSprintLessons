@@ -13,33 +13,40 @@ fun main() {
 
     while (password.length != passwordLength) {
 
-        val numberOfCharacterTypes = 3
-        val probability = (Math.random() * numberOfCharacterTypes).toInt()
+        val probability = (1..3).random()
 
-        if (probability != 0) {
+        if (probability != 1) {
 
             for (i in 'a'..'z') {
-                val randomNumber = (Math.random() * LENGTH_ALPHABET).toInt()
+                val randomNumber = (1..LENGTH_ALPHABET).random()
 
-                if (randomNumber == 0) {
-                    val randomNumber = (Math.random() * 2).toInt()
+                if (randomNumber == 1) {
+                    val randomNumber = (1..2).random()
 
                     when (randomNumber) {
-                        0 -> password += i.uppercase()
-                        1 -> password += i
+                        1 -> {
+                            password += i.uppercase()
+                            break
+                        }
+
+                        2 -> {
+                            password += i
+                            break
+                        }
                     }
                 }
             }
-
         } else {
             for (i in 0..9) {
-                val randomNumber = (Math.random() * DECIMAL_NUMBER_SYSTEM).toInt()
+                val randomNumber = (1..DECIMAL_NUMBER_SYSTEM).random()
 
-                if (randomNumber == 0) password += i
+                if (randomNumber == 1) {
+                    password += i
+                    break
+                }
             }
         }
     }
 
     println(password)
-
 }
