@@ -23,13 +23,13 @@ fun main() {
 
         numberOfAttempts--
 
-        if (userNumber == number1 + number2){
+        if (userNumber == number1 + number2) {
             println("Я верил, что ты чист!")
             println("Двери тебе открыты..")
             return
         }
 
-    } while (userNumber != number1 + number2 && numberOfAttempts > 0)
+    } while (numberOfAttempts > 0)
 
-println("Серое и безжизненное существо...")
+    println("Серое и безжизненное существо...")
 }
