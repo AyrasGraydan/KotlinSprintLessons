@@ -12,10 +12,11 @@ fun main() {
     val isReplaceIngredient = readln().toBoolean()
 
     if (isReplaceIngredient) {
-        print("Какой ингридиент заменить? ")
-        val substituteIngredient = readln()
 
-        val index = arrayOfDishes.indexOf(substituteIngredient)
+        print("Какой ингридиент заменить? ")
+        val oldIngredient = readln()
+
+        val index = arrayOfDishes.indexOf(oldIngredient)
 
         if (index != -1) {
             print("На какой ингридиент заменить? ")
