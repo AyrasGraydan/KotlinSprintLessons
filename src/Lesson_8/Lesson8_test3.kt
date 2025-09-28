@@ -4,10 +4,10 @@ fun main() {
 
     val arrayOfIngredients = arrayOf("листья", "гренки", "пармезан", "соус", "мясо", "томаты")
 
-    val userDish = readln()
+    print("Введите названия блюда: ")
+    val userDish = readln().lowercase()
 
     if (arrayOfIngredients.indexOf(userDish) != -1)
         println("Ингредиент \"$userDish\" в рецепте есть")
-    else println()
-
+    else println("Такого ингридиента нет")
 }
