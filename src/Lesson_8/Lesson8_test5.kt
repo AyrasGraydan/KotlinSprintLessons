@@ -3,16 +3,15 @@ package Lesson_8
 fun main() {
 
     print("Ведите количсетво ингридиентов: ")
-    val numberOfIngredients = readln().toInt()
+    val numberOfIngredients = readln().toIntOrNull() ?: 0
 
-    var arrayOfIngredients = Array(numberOfIngredients) { "" }
+    val arrayOfIngredients = Array(numberOfIngredients) { "" }
 
     for (i in arrayOfIngredients) {
+
         print("Введите название блюда #${arrayOfIngredients.indexOf(i) + 1}: ")
         arrayOfIngredients.set(arrayOfIngredients.indexOf(i), readln())
-
     }
 
-    println(arrayOfIngredients.joinToString(", "))
-
+    println(arrayOfIngredients.joinToString())
 }
