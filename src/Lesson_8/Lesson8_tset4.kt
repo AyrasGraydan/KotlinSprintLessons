@@ -1,36 +1,29 @@
 package Lesson_8
 
 fun main() {
-
     val arrayOfDishes = arrayOf("листья", "гренки", "пармезан", "соус", "мясо", "томаты")
 
-    for (i in arrayOfDishes) {
-        println("#${arrayOfDishes.indexOf(i) + 1} $i")
-    }
+    println(arrayOfDishes.joinToString())
 
     print("Заменить ингридиент? true/false ")
     val isReplaceIngredient = readln().toBoolean()
 
     if (isReplaceIngredient) {
-
         print("Какой ингридиент заменить? ")
-        val oldIngredient = readln()
+        val oldIngredient = readln().lowercase()
 
         val index = arrayOfDishes.indexOf(oldIngredient)
 
-        if (index != -1) {
+        if (oldIngredient in arrayOfDishes) {
             print("На какой ингридиент заменить? ")
             val newIngredient = readln()
 
-            arrayOfDishes.set(index, newIngredient)
+            arrayOfDishes[index] = newIngredient
 
             println()
             println("Готово! Вы сохранили следующий список:")
 
-            for (i in arrayOfDishes) {
-                println("#${arrayOfDishes.indexOf(i) + 1} $i")
-            }
-
+            println(arrayOfDishes.joinToString())
         } else println("Такого ингридиента нет")
     }
 }
