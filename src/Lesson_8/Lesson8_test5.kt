@@ -1,17 +1,14 @@
 package Lesson_8
 
 fun main() {
-
     print("Ведите количсетво ингридиентов: ")
     val numberOfIngredients = readln().toIntOrNull() ?: 0
 
     val arrayOfIngredients = Array(numberOfIngredients) { "" }
 
-    for (i in arrayOfIngredients) {
-
-        print("Введите название блюда #${arrayOfIngredients.indexOf(i) + 1}: ")
-        arrayOfIngredients.set(arrayOfIngredients.indexOf(i), readln())
+    for (i in arrayOfIngredients.indices) {
+        print("Введите название ингридиента #${i + 1}: ")
+        arrayOfIngredients[i] = readln()
     }
-
     println(arrayOfIngredients.joinToString())
 }
