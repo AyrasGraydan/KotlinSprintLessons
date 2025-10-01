@@ -1,25 +1,16 @@
 package Lesson_9
 
 fun main() {
-
-    val mapIngredient = mapOf("яйца" to "2 шт", "молока" to "50 мл", "сливочного масла" to "15 гр")
+    val standardPortion = mapOf("яйца" to "2 шт", "молока" to "50 мл", "сливочного масла" to "15 гр")
 
     print("Введите количество порций: ")
-    val numberOfServings = readln().toInt()
+    val numberOfServings = readln().toIntOrNull() ?: 0
 
-    val mapPortionSize =
-        mapIngredient.map { (key, value) ->
-            val listValue = value.split(" ")
-            (listValue[0].toInt() * numberOfServings).toString() + " ${listValue[1]}," to key
-        }
-
-    print("На $numberOfServings порций вам понадобится: ")
-
-    var stringIngredient = ""
-    mapPortionSize.forEach { (key, value) ->
-        stringIngredient += "$value - $key "
+    val userPortion = standardPortion.map { (ingredient, quantity) ->
+        val listQuantity = quantity.split(" ")
+        ingredient to (listQuantity[0].toInt() * numberOfServings).toString() + " ${listQuantity[1]}"
     }
 
-    println(stringIngredient.dropLast(2))
-
+    println("На $numberOfServings порций вам понадобится: "
+                + userPortion.joinToString { (key, value) -> "\"$key\" - $value" })
 }
