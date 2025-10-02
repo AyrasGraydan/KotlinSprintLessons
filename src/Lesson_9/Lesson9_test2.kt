@@ -1,10 +1,10 @@
 package Lesson_9
 
 fun main() {
-    val listIngredients = mutableListOf("помидоры", "огурцы", "сыр фета")
+    val ingredients = mutableListOf("помидоры", "огурцы", "сыр фета")
 
     println("В рецепте есть базовые ингредиенты: ")
-    listIngredients.forEach { println("№${listIngredients.indexOf(it) + 1} $it") }
+    ingredients.forEachIndexed { index, ingredient -> println("#${index + 1} $ingredient") }
 
     println()
     print("Желаете добавить еще?: да/skip ")
@@ -12,9 +12,9 @@ fun main() {
 
     if (isAddIngredient) {
         print("Какой ингредиент вы хотите добавить? ")
-        listIngredients.add(readln())
+        ingredients.add(readln())
 
         println("Теперь в рецепте есть следующие ингредиенты:")
-        listIngredients.forEach { println("№${listIngredients.indexOf(it) + 1} $it") }
+        ingredients.forEachIndexed { index, ingredient -> println("#${index + 1} $ingredient") }
     } else println("Список остался неизменен")
 }
