@@ -1,6 +1,6 @@
 package Lesson_10
 
-const val minLength = 4
+const val MIN_LENGTH = 4
 
 fun main() {
     println("Минимальная длинна логина и пароля: 4 символа")
@@ -13,4 +13,4 @@ fun main() {
     else println("Логин или пароль недостаточно длинные")
 }
 
-fun validateLength(length: String): Boolean = length.length >= minLength
+fun validateLength(input: String): Boolean = input.length >= MIN_LENGTH
