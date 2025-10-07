@@ -13,18 +13,20 @@ fun main() {
     if (numberOfUserWins == 0) println("Вам еще повезет, обязательно!")
 }
 
-fun rollTheDice(): Int = (1..6).random()
+fun throwDice(): Int = (1..6).random()
 
 fun startGame(): Int {
-    val userRollResult = rollTheDice()
-    val machineRollResult = rollTheDice()
+    val userRollResult = throwDice()
+    val machineRollResult = throwDice()
 
-    Thread.sleep(2000)
+    val secondToMillisecond = 1000L
+    val twoSecondsToMillisecond = 2000L
+
+    Thread.sleep(twoSecondsToMillisecond)
     println("Ваш бросок: $userRollResult ")
-    Thread.sleep(1500)
+    Thread.sleep(twoSecondsToMillisecond)
     println("Бросок машины: $machineRollResult ")
-    Thread.sleep(1000)
+    Thread.sleep(secondToMillisecond)
 
-    if (userRollResult > machineRollResult) return 1
-    else return 0
+    return if (userRollResult > machineRollResult) 1 else 0
 }
