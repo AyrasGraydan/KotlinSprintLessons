@@ -1,25 +1,19 @@
 package Lesson_10
 
-const val login = "mark"
-const val password = "0000"
+const val LOGIN = "mark"
+const val PASSWORD = "0000"
 
 fun main() {
+    val cartContents = listOf("Клавиатура", "Атомный реактор", "Bugatti")
+
     print("Введите логин: ")
     val userLogin = readln()
     print("Введите пароль: ")
     val userPassword = readln()
 
-    val cartContents = listOf("Клавиатура", "Атомный реактор", "Bugatti")
-
-    val accessTokens =
-        if (userLogin == login && userPassword == password) generateToken() else null
-
-    if (accessTokens != null) {
-        println("Ваш токен: $accessTokens")
-        println()
-        println("Содержимое корзины:")
-        cartContents.forEach { println(it) }
-    } else println("Неверный логин или пароль")
+    val accessToken = authenticateUser(userLogin, userPassword)
+    println()
+    getCartContents(accessToken, cartContents)
 }
 
 fun generateToken(): String {
@@ -27,9 +21,20 @@ fun generateToken(): String {
     val numbers = 0..9
     val chars = 'a'..'z'
     val charsUppercase = 'A'..'Z'
+    val fullDiapason = numbers + chars + charsUppercase
 
     for (i in 1..32) {
-        token += (numbers + chars + charsUppercase).random()
+        token += fullDiapason.random()
     }
     return token
+}
+
+fun authenticateUser(userLogin: String, userPassword: String): String? =
+    if (userLogin == LOGIN && userPassword == PASSWORD) generateToken() else null
+
+fun getCartContents(token: String?, cartContents: List<String>) {
+    if (token != null) {
+        println("Содержимое корзины:")
+        cartContents.forEach { println(it) }
+    } else println("Неверный логин или пароль")
 }
