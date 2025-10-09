@@ -1,11 +1,10 @@
 package Lesson_10
 
-const val secondToMillisecond = 1000L
-const val twoSecondsToMillisecond = 2000L
+const val SECOND_TO_MILLISECOND = 1000L
+const val TWO_SECONDS_TO_MILLISECOND = 2000L
 
 fun main() {
     val gameResults = mutableListOf<String>()
-    var numberOfWins = 0
 
     do {
         gameResults.add(startGame())
@@ -13,10 +12,8 @@ fun main() {
     } while (readln().equals("да", true))
 
     println()
-    gameResults.forEach {
-        if (it == "wins")
-            numberOfWins++
-    }
+    val numberOfWins = gameResults.count{it == "win"}
+
     println("Ваше число побед: $numberOfWins")
     if (numberOfWins == 0) println("Вам еще повезет, обязательно!")
 }
@@ -27,11 +24,11 @@ fun startGame(): String {
     val userRollResult = throwDice()
     val machineRollResult = throwDice()
 
-    Thread.sleep(twoSecondsToMillisecond)
+    Thread.sleep(TWO_SECONDS_TO_MILLISECOND)
     println("Ваш бросок: $userRollResult ")
-    Thread.sleep(twoSecondsToMillisecond)
+    Thread.sleep(TWO_SECONDS_TO_MILLISECOND)
     println("Бросок машины: $machineRollResult ")
-    Thread.sleep(secondToMillisecond)
+    Thread.sleep(SECOND_TO_MILLISECOND)
 
     return when {
         userRollResult > machineRollResult -> "win"
