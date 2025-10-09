@@ -4,8 +4,6 @@ const val LOGIN = "mark"
 const val PASSWORD = "0000"
 
 fun main() {
-    val cartContents = listOf("Клавиатура", "Атомный реактор", "Bugatti")
-
     print("Введите логин: ")
     val userLogin = readln()
     print("Введите пароль: ")
@@ -13,7 +11,10 @@ fun main() {
 
     val accessToken = authenticateUser(userLogin, userPassword)
     println()
-    getCartContents(accessToken, cartContents)
+
+    val cartContents = getCartContents(accessToken)
+    if (cartContents != null) cartContents.forEach { println(it) }
+    else println("неверный логин или пароль")
 }
 
 fun generateToken(): String {
@@ -32,9 +33,11 @@ fun generateToken(): String {
 fun authenticateUser(userLogin: String, userPassword: String): String? =
     if (userLogin == LOGIN && userPassword == PASSWORD) generateToken() else null
 
-fun getCartContents(token: String?, cartContents: List<String>) {
+fun getCartContents(token: String?): List<String>? {
+    val cartContents = listOf("Клавиатура", "Атомный реактор", "Bugatti")
+
     if (token != null) {
-        println("Содержимое корзины:")
-        cartContents.forEach { println(it) }
-    } else println("Неверный логин или пароль")
+        return cartContents
+    }
+    return null
 }
