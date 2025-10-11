@@ -8,3 +8,17 @@ fun main() {
     println()
     user2.printUserInfo()
 }
+
+class User(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val mail: String
+) {
+    fun printUserInfo() {
+        println(id)
+        println(login)
+        println(password)
+        println(mail)
+    }
+}
