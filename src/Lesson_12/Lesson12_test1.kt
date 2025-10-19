@@ -3,6 +3,9 @@ package Lesson_12
 fun main() {
     val day1 = DayWeather("01.11.2023", 12, -4, true)
     val day2 = DayWeather("04.12.2042", 53, -27)
+
+    day1.printDayInfo()
+    day2.printDayInfo()
 }
 
 class DayWeather() {
@@ -21,7 +24,9 @@ class DayWeather() {
         this.dayTemperature = dayTemperature
         this.nightTemperature = nightTemperature
         this.isHavePrecipitation = isHavePrecipitation
+    }
 
+    fun printDayInfo() {
         println(
             """ 
                 День: $day
