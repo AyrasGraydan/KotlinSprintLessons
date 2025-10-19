@@ -1,6 +1,5 @@
 package Lesson_13
 
-
 fun main() {
 
     print("Введите номер: ")
