@@ -6,7 +6,7 @@ fun main() {
     val numberLength = 1..9
     val numbers = 0..9
 
-    val telephoneBook = names.mapIndexed { index, name ->
+    val telephoneBook = names.mapIndexed { index, _ ->
         User3(
             names[index],
             ("1" + numberLength.map { numbers.random() }.joinToString("")).toLong(),
@@ -14,7 +14,7 @@ fun main() {
         )
     }
 
-    telephoneBook.forEach { println(it.company ?: "<не указано>") }
+    telephoneBook.mapNotNull { it.company }.forEach { println(it) }
 }
 
 class User3(
