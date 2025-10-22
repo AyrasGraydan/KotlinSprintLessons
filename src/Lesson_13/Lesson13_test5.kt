@@ -6,13 +6,20 @@ fun main() {
     val telephone = readln().toLongOrNull()
     val user: User5
 
-    if (telephone != null)
-        user = User5("GGhuman", telephone)
-    else println("Вы обложались и получили NullPointerException")
+    try {
+        user = User5("GGhuman", telephone!!)
+        user.printInfo()
+    } catch (e: NullPointerException) {
+        println("Вы обложались и получили NullPointerException")
+    }
 }
 
 class User5(
     val name: String,
     val telephone: Long,
     val company: String? = null
-)
+) {
+    fun printInfo() {
+        println("Имя: $name \nТел: $telephone \nКомпания: ${company ?: "<не указано>"}")
+    }
+}
