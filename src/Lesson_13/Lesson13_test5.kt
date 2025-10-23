@@ -9,7 +9,7 @@ fun main() {
         user = User5("GGhuman", telephone.toLong())
         user.printInfo()
     } catch (e: NumberFormatException) {
-        println("Вы обложались и получили NumberFormatException")
+        println("Вы обложались и получили ${e::class.simpleName}")
     }
 }
 
