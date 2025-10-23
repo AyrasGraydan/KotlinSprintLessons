@@ -8,8 +8,12 @@ fun main() {
         )
     )
 
-    telephoneBook.addUser()
-    println()
+    do {
+        println()
+        telephoneBook.addUser()
+        print("Добавить запись в телефонную книгу да/нет: ")
+    } while (readln().equals("да", true))
+
     telephoneBook.printInfo()
 }
 
@@ -30,7 +34,7 @@ class TelephoneBook(val telephoneBook: MutableList<User4>) {
         print("Введите компанию: ")
         var company: String? = readln()
 
-        if (company?.isEmpty() == true) company = null
+        if (company?.isEmpty() ?: false) company = null
 
         if (telephone != null) telephoneBook.add(User4(name, telephone, company))
         else println("Вы не указали номер телефона, пользователь не был добавлен")
