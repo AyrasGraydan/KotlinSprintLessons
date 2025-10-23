@@ -1,16 +1,15 @@
 package Lesson_13
 
 fun main() {
-
     print("Введите номер: ")
-    val telephone = readln().toLongOrNull()
+    val telephone = readln()
     val user: User5
 
     try {
-        user = User5("GGhuman", telephone!!)
+        user = User5("GGhuman", telephone.toLong())
         user.printInfo()
-    } catch (e: NullPointerException) {
-        println("Вы обложались и получили NullPointerException")
+    } catch (e: NumberFormatException) {
+        println("Вы обложались и получили NumberFormatException")
     }
 }
 
