@@ -12,15 +12,15 @@ fun main() {
 
     println(
         String.format(
-        "Периметр черных: %.2f",
-        figures.filter { it.color == "black" }.map { it.calculatePerimeter() }.sum()
-    )
+            "Периметр черных: %.2f",
+            figures.filter { it.color == "black" }.map { it.calculatePerimeter() }.sum()
+        )
     )
     println(
         String.format(
             "Площадь белых: %.2f",
-        figures.filter { it.color == "white" }.map { it.calculateArea() }.sum()
-    )
+            figures.filter { it.color == "white" }.map { it.calculateArea() }.sum()
+        )
     )
 }
 
