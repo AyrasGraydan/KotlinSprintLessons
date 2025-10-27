@@ -14,11 +14,13 @@ abstract class WeatherStationStats(val value: Int)
 class Temperature(value: Int) : WeatherStationStats(value)
 class PrecipitationAmount(value: Int) : WeatherStationStats(value)
 
-class WeatherServer(){
+class WeatherServer {
 
-    fun sendData(data: WeatherStationStats){
-        if (data is Temperature)
-            println("Температура: ${data.value}")
-        else println("Количество осадов: ${data.value}")
+    fun sendData(data: WeatherStationStats) {
+        when (data) {
+            is Temperature -> println("Температура: ${data.value}")
+            is PrecipitationAmount -> println("Количество осадов: ${data.value}")
+            else -> println("Неизвестный тип данных")
+        }
     }
 }
