@@ -11,6 +11,7 @@ fun main() {
     admin.readeForum()
     admin.write("пока")
     admin.deleteMessage(1)
+    admin.deleteUser(1)
 }
 
 abstract class ForumParticipant(val name: String, val avatar: String, val id: Int) {
@@ -30,5 +31,9 @@ class Administrator(name: String, avatar: String, id: Int) : ForumParticipant(na
 
     fun deleteMessage(messageId: Int) {
         println("$name удалил сообщение с id: $messageId")
+    }
+
+    fun deleteUser(userId: Int) {
+        println("$name удалил сообщение с id: $userId")
     }
 }
