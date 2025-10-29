@@ -1,7 +1,7 @@
 package Lesson_15
 
 fun main() {
-    val truck = Track(1, maxNumberOfCargo = 2000)
+    val truck = Truck(1, maxNumberOfCargo = 2000)
     val car1 = Car(3)
     val car2 = Car(3)
 
@@ -10,7 +10,7 @@ fun main() {
     car1.addPassengers(3)
     car2.addPassengers(3)
 
-    car2.removePassenger(1)
+    car2.removePassengers(1)
 
     truck.startEngine()
     truck.startOfMovement()
@@ -41,7 +41,7 @@ fun main() {
     println("Пассажиры: ${numberOfPassengers.sum()}")
 }
 
-class Track(
+class Truck(
     override val maxNumberOfPassengers: Int,
     override var currentNumberOfPassengers: Int = 0,
     override val maxNumberOfCargo: Int,
@@ -81,12 +81,12 @@ interface TransportationOfPassengers {
     var currentNumberOfPassengers: Int
 
     fun addPassengers(numberOfPassengers: Int) {
-        currentNumberOfPassengers += numberOfPassengers
+        currentNumberOfPassengers = (currentNumberOfPassengers + numberOfPassengers)
             .coerceAtMost(maxNumberOfPassengers).coerceAtLeast(0)
     }
 
-    fun removePassenger(numberOfPassengers: Int) {
-        currentNumberOfPassengers -= numberOfPassengers
+    fun removePassengers(numberOfPassengers: Int) {
+        currentNumberOfPassengers = (currentNumberOfPassengers - numberOfPassengers)
             .coerceAtMost(maxNumberOfPassengers).coerceAtLeast(0)
     }
 }
@@ -96,12 +96,12 @@ interface TransportationOfCargo {
     var currentNumberOfCargo: Int
 
     fun addCargo(numberOfCargo: Int) {
-        currentNumberOfCargo += numberOfCargo
+        currentNumberOfCargo = (currentNumberOfCargo + numberOfCargo)
             .coerceAtMost(maxNumberOfCargo).coerceAtLeast(0)
     }
 
     fun removeCargo(numberOfCargo: Int) {
-        currentNumberOfCargo -= numberOfCargo
+        currentNumberOfCargo = (currentNumberOfCargo - numberOfCargo)
             .coerceAtMost(maxNumberOfCargo).coerceAtLeast(0)
     }
 }
