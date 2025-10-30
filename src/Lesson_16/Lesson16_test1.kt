@@ -7,7 +7,7 @@ fun main() {
     dice2.printValue()
 }
 
-private class Dice(val value: Int = (1..6).random()) {
+class Dice(private val value: Int = (1..6).random()) {
 
     fun printValue() {
         println("Число кубика: $value")
