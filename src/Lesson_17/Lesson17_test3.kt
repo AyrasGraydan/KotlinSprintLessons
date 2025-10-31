@@ -12,7 +12,7 @@ class Directory(name: String, numberOfFiles: Int, val secretFlag: Boolean = fals
 
     val name = Pair(name, numberOfFiles)
         get() {
-            if (secretFlag){
+            if (secretFlag) {
                 return Pair("скрытая директория", 0)
             }
             return field
