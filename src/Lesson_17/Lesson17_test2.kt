@@ -1,7 +1,6 @@
 package Lesson_17
 
 fun main() {
-
     val ship = Ship("avrora", 200, "vostock")
     ship.name = ""
 }
