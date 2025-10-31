@@ -9,11 +9,11 @@ fun main() {
     println(String.format("Периметр: %.2f", circle.calculatePerimeter()))
 }
 
-private const val pi = 3.14
+private const val PI = 3.14
 
 private class Circle(private val radius: Double) {
 
     fun getRadius() = radius
-    fun calculateArea() = radius.pow(2.0) * pi
-    fun calculatePerimeter() = 2 * radius * pi
+    fun calculateArea() = radius.pow(2.0) * PI
+    fun calculatePerimeter() = 2 * radius * PI
 }
