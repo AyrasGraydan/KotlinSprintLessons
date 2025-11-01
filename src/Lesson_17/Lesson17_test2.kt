@@ -1,11 +1,11 @@
 package Lesson_17
 
 fun main() {
-    val ship = Ship("avrora", 200, "vostock")
+    val ship = Ship1("avrora", 200, "vostock")
     ship.name = ""
 }
 
-class Ship(name: String, val averageSpeed: Int, val port: String) {
+class Ship1(name: String, val averageSpeed: Int, val port: String) {
 
     var name = name
         set(value) {
