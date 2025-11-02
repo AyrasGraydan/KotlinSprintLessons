@@ -8,9 +8,9 @@ fun main() {
     println(quiz1.answer)
 }
 
-class Quiz(question: String?, answer: String?) {
+class Quiz(question: String, answer: String) {
 
-    val question = question
+    var question = question
         get() = field
 
     var answer = answer
