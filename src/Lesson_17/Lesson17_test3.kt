@@ -8,13 +8,8 @@ fun main() {
     println(directory2.name)
 }
 
-class Directory(name: String, numberOfFiles: Int, val secretFlag: Boolean = false) {
+class Directory(name: String, numberOfFiles: Int, val isSecret: Boolean = false) {
 
     val name = Pair(name, numberOfFiles)
-        get() {
-            if (secretFlag) {
-                return Pair("скрытая директория", 0)
-            }
-            return field
-        }
+        get() = if (isSecret) Pair("скрытая директория", 0) else field
 }
