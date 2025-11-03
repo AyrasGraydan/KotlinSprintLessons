@@ -1,7 +1,7 @@
 package Lesson_17
 
 fun main() {
-    val user = User("avelin", "1234")
+    val user = User("avelin", "12345")
     user.login = "astrorg"
     user.password = "____"
     println(user.password)
@@ -16,10 +16,8 @@ class User(login: String, password: String) {
         }
 
     var password = password
-        get() = repeatChar('*', field.length)
+        get() = "*".repeat(field.length)
         set(value) {
             println("Вы не можете изменить пароль")
         }
 }
-
-fun repeatChar(char: Char, length: Int) = String(CharArray(length) { char })
