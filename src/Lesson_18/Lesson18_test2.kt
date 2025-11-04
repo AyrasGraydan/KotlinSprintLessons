@@ -13,7 +13,6 @@ fun main() {
 }
 
 open class Dice() {
-
     open fun throwDice() = 0
 }
 
