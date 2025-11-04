@@ -1,7 +1,6 @@
 package Lesson_18
 
 fun main() {
-
     val dice1 = DiceSided4()
     val dice2 = DiceSided6()
     val dice3 = DiceSided8()
