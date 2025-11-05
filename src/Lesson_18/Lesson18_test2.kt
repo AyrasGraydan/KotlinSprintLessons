@@ -6,24 +6,16 @@ fun main() {
     val dice3 = DiceSided8()
 
     val dices = listOf<Dice>(dice1, dice2, dice3)
-    val results = mutableListOf<Int>()
 
-    dices.forEach { dice -> results.add(dice.throwDice()) }
-    println(results)
+    dices.forEach { it.throwDice() }
 }
 
-open class Dice() {
-    open fun throwDice() = 0
+abstract class Dice(val faces: Int) {
+    open fun throwDice() {
+        println("Кубик показал: ${(1..faces).random()}")
+    }
 }
 
-class DiceSided4() : Dice() {
-    override fun throwDice() = (1..4).random()
-}
-
-class DiceSided6() : Dice() {
-    override fun throwDice() = (1..6).random()
-}
-
-class DiceSided8() : Dice() {
-    override fun throwDice() = (1..8).random()
-}
+class DiceSided4 : Dice(4)
+class DiceSided6 : Dice(6)
+class DiceSided8 : Dice(8)
