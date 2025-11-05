@@ -10,15 +10,12 @@ fun main() {
     package1.forEach { println(it.getSquares()) }
 }
 
-open class Box() {
-    open fun getSquares() = listOf(0.0)
+abstract class Box {
+    abstract fun getSquares(): Float
 }
 
 class SquareBox(val length: Double) : Box() {
-    override fun getSquares(): List<Double> {
-        val square = length.pow(2.0)
-        return List(3) { square }
-    }
+    override fun getSquares() = length.pow(2.0).toFloat() * 6
 }
 
 class RectangularBox(
@@ -26,5 +23,6 @@ class RectangularBox(
     val width: Double,
     val height: Double
 ) : Box() {
-    override fun getSquares() = listOf(length * width, length * height, width * height)
+    override fun getSquares() =
+        2 * (length * width + length * height + width * height).toFloat()
 }
