@@ -35,7 +35,5 @@ class People(val name: String, val gender: Gender) {
 }
 
 enum class Gender {
-    NOT_SPECIFIED,
-    MAN,
-    WOMAN
+    NOT_SPECIFIED, MAN, WOMAN
 }
