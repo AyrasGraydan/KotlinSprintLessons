@@ -7,15 +7,15 @@ fun main() {
     val box2 = RectangularBox(2.0, 1.0, 3.0)
     val package1 = listOf<Box>(box1, box2)
 
-    package1.forEach { println(it.getSquares()) }
+    package1.forEach { println(it.calculateSurfaceArea()) }
 }
 
 abstract class Box {
-    abstract fun getSquares(): Float
+    abstract fun calculateSurfaceArea(): Double
 }
 
 class SquareBox(val length: Double) : Box() {
-    override fun getSquares() = length.pow(2.0).toFloat() * 6
+    override fun calculateSurfaceArea() = length.pow(2.0) * 6
 }
 
 class RectangularBox(
@@ -23,6 +23,6 @@ class RectangularBox(
     val width: Double,
     val height: Double
 ) : Box() {
-    override fun getSquares() =
-        2 * (length * width + length * height + width * height).toFloat()
+    override fun calculateSurfaceArea() =
+        2 * (length * width + length * height + width * height)
 }
