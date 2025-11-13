@@ -20,5 +20,5 @@ enum class ProductCategory(val categoryName: String) {
     STATIONERY("канцелярия"),
     MISCELLANEOUS("разное");
 
-    fun getCategoryString() = "Категория: $name"
+    fun getCategoryString() = "Категория: $categoryName"
 }
