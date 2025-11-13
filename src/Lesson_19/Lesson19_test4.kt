@@ -48,7 +48,7 @@ class Tank(
     }
 
     fun shoot() {
-        if (currentAmmo != null) println("Урон снаряда: ${currentAmmo!!.damage} Тип снаряда: ${currentAmmo!!.name}")
+        if (currentAmmo != null) println("Урон снаряда: ${currentAmmo?.damage} Тип снаряда: ${currentAmmo?.name}")
         else println("Вы не зарядили снаряд")
     }
 }
