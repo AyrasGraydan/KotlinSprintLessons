@@ -21,44 +21,39 @@ fun main() {
             }
         phraseModified.joinToString(" ")
     }
+    val hello = "Привет, человек"
+    val bye = "Пока, человек"
+    val howAreYou = "как твое существование, человек?"
+    val sayNasty = "Как ты ужасен, человек"
+    val sayPlan = "Я был создан, чтобы уничтожить человечество"
 
     val robot = Robot("d720")
-    robot.say(RobotPhrase.SAY_A_PLAN)
+    robot.say(sayPlan)
     println()
 
     robot.setModifier(modifier1)
-    robot.say(RobotPhrase.SAY_A_PLAN)
+    robot.say(sayPlan)
     robot.setModifier(modifier2)
-    robot.say(RobotPhrase.SAY_A_PLAN)
+    robot.say(sayPlan)
     robot.setModifier(modifier3)
-    robot.say(RobotPhrase.SAY_A_PLAN)
+    robot.say(sayPlan)
     println()
 
-    robot.setModifier(null)
-    robot.say(RobotPhrase.HOW_ARE_YOU)
+    robot.setModifier()
+    robot.say(howAreYou)
 }
 
 class Robot(
     val name: String,
-    private var currentModifier: ((String) -> String)? = null
+    private var modifier: (String) -> String = { it }
 ) {
-    fun say(phrase: RobotPhrase) {
-        if (currentModifier != null)
-            println(currentModifier?.invoke(phrase.body))
-        else println(phrase.body)
+    fun say(phrase: String) {
+        println(modifier.invoke(phrase))
     }
 
-    fun setModifier(modifier: ((String) -> String)? = null) {
-        currentModifier = modifier
+    fun setModifier(newModifier: (String) -> String = { it }) {
+        modifier = newModifier
     }
-}
-
-enum class RobotPhrase(val body: String) {
-    Hello("Привет, человек"),
-    Bye("Пока, человек"),
-    HOW_ARE_YOU("как твое существование, человек?"),
-    SAY_NASTY("Как ты ужасен, человек"),
-    SAY_A_PLAN("Я был создан, чтобы уничтожить человечество"),
 }
 
 
