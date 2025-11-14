@@ -1,13 +1,13 @@
 package Lesson_20
 
 fun main() {
-    val drinkHealingPotion: (User1, HealingPotion) -> String = { user, potion ->
+    val drinkHealingPotion: (User, HealingPotion) -> String = { user, potion ->
         user.currentHp = (user.currentHp + user.maxHp / 100 * potion.healingPercentage)
             .coerceAtMost(user.maxHp).coerceAtLeast(0)
         "${user.name} исцелил свое здоровье c помощью \"${potion.potionName}\""
     }
 
-    val user = User1("Astrorg", 740, 1)
+    val user = User("Astrorg", 740, 1)
     println(drinkHealingPotion(user, HealingPotion.SMALL_POTION))
     println(user.currentHp)
     println(drinkHealingPotion(user, HealingPotion.MEDIUM_POTION))
