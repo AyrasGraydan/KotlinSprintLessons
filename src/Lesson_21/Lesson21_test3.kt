@@ -9,4 +9,4 @@ fun main() {
 
 class User(val name: String, val maxHp: Int, var currentHp: Int)
 
-fun User.isHealthy() = this.maxHp <= this.currentHp
+fun User.isHealthy() = maxHp == currentHp
