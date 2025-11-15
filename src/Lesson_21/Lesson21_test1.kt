@@ -5,9 +5,9 @@ const val VOWELS_IN_ENGLISH = "aeiouy"
 fun main() {
     val test = "AEIOUYaeiouy"
 
-    println("Hello".vowelCount1())
-    println(test.vowelCount1())
+    println("Hello".vowelCount())
+    println(test.vowelCount())
 }
 
-fun String.vowelCount1() =
-    this.lowercase().filter { VOWELS_IN_ENGLISH.contains(it) }.length
+fun String.vowelCount() =
+    this.lowercase().count { VOWELS_IN_ENGLISH.contains(it) }
