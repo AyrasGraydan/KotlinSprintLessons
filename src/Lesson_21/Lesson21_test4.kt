@@ -6,14 +6,14 @@ fun main() {
     val testFile = File("file.txt")
     testFile.createNewFile()
 
-    testFile.writeTextLowercase("TEST STRING\n")
-    println(testFile.readText())
+    testFile.writeText("")
 
-    testFile.writeTextLowercase("TEST string 2, функция перезаписывает прошлую версию файл")
+    testFile.writeTextLowercase("это 2")
+    testFile.writeTextLowercase("это БУДЕТ 1 строка ---- ")
     println(testFile.readText())
 }
 
 fun File.writeTextLowercase(text: String) {
-    writeText(text.lowercase())
+    writeText(text.lowercase() + readText())
 }
 
