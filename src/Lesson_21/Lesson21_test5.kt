@@ -6,7 +6,4 @@ fun main() {
     println(skills.maxCategory())
 }
 
-fun Map<String, Int>.maxCategory(): String {
-    val maxExp = values.maxOrNull() ?: return "---map is empty---"
-    return keys.toList()[values.toList().indexOf(maxExp)]
-}
+fun Map<String, Int>.maxCategory() = maxByOrNull { it.value }?.key
