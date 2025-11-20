@@ -21,39 +21,40 @@ fun main() {
             }
         phraseModified.joinToString(" ")
     }
-    val hello = "Привет, человек"
-    val bye = "Пока, человек"
-    val howAreYou = "как твое существование, человек?"
-    val sayNasty = "Как ты ужасен, человек"
-    val sayPlan = "Я был создан, чтобы уничтожить человечество"
 
     val robot = Robot("d720")
-    robot.say(sayPlan)
+    robot.say()
     println()
 
     robot.setModifier(modifier1)
-    robot.say(sayPlan)
+    robot.say()
     robot.setModifier(modifier2)
-    robot.say(sayPlan)
+    robot.say()
     robot.setModifier(modifier3)
-    robot.say(sayPlan)
+    robot.say()
     println()
 
     robot.setModifier()
-    robot.say(howAreYou)
+    robot.say()
 }
 
 class Robot(
     val name: String,
     private var modifier: (String) -> String = { it }
 ) {
-    fun say(phrase: String) {
-        println(modifier.invoke(phrase))
+    val phrases = listOf(
+        "Привет, человек",
+        "Пока, человек",
+        "как твое существование, человек?",
+        "Как ты ужасен, человек",
+        "Я был создан, чтобы уничтожить человечество"
+    )
+
+    fun say() {
+        println(modifier.invoke(phrases.random()))
     }
 
     fun setModifier(newModifier: (String) -> String = { it }) {
         modifier = newModifier
     }
 }
-
-
