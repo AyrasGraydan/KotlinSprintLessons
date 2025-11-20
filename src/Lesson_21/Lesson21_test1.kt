@@ -10,4 +10,4 @@ fun main() {
 }
 
 fun String.vowelCount() =
-    this.lowercase().count { VOWELS_IN_ENGLISH.contains(it) }
+    this.lowercase().count { it in VOWELS_IN_ENGLISH }
