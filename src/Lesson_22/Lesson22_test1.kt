@@ -10,12 +10,11 @@ fun main() {
 
     println(dataBook1 == dataBook2)
     println("${dataBook1.hashCode()} ${dataBook2.hashCode()}")
-//    "==" оператор сравнивает хэш код классов
-//    1. тк у обычных классов код генерируется условно рандомно,
-//    то результат false
-//    2. у data классов код генерируется на основе их данных и при одинаковых данных код один,
-//    по этому при сравнении одинаковых data классов результат true
+//    "==" вызывает equals()
+//    1. у обычных классов equals() сравнивает ссылки памяти объектов
+//    2. у data классов equals() изменен и сравнивает по их содержимому
 }
 
 class RegularBook(val bookName: String, val author: String)
+
 data class DataBook(val bookName: String, val author: String)
