@@ -14,6 +14,5 @@ fun main() {
 }
 
 fun File.writeTextLowercase(text: String) {
-    writeText(text.lowercase() + readText())
+    writeText(text.lowercase() + "\n" + readText())
 }
-
