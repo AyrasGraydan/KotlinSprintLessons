@@ -1,31 +1,30 @@
 package Lesson_22
 
-import Lesson_22.LoadingStatus
-import kotlin.concurrent.thread
-
 fun main() {
-    val view = MainScreenState("---abstract data---")
-    val viewModel = MainScreenViewModel(view)
+    val viewModel = MainScreenViewModel()
     viewModel.loadData()
-
-    println(view)
 }
 
-class MainScreenViewModel(val mainScreenState: MainScreenState) {
+class MainScreenViewModel {
+    private val _mainScreenState = MainScreenState("---abstract data---")
+    lateinit var mainScreenState: MainScreenState
+
     fun loadData() {
         Thread.sleep(1000)
-        val mainScreenStateLoading = mainScreenState
-            .copy(loadingStatus = LoadingStatus.LOADING)
+        mainScreenState = _mainScreenState
+            .copy(data = null)
+        println(mainScreenState)
+
         Thread.sleep(1000)
-        val mainScreenStateAvailability = mainScreenState
-            .copy(loadingStatus = LoadingStatus.AVAILABILITY)
+        mainScreenState = _mainScreenState
+            .copy(data = null, loadingStatus = true)
+        println(mainScreenState)
+
+        Thread.sleep(1000)
+        mainScreenState = _mainScreenState
+            .copy(loadingStatus = false)
+        println(mainScreenState)
     }
 }
 
-data class MainScreenState(val data: String, var loadingStatus: LoadingStatus = LoadingStatus.ABSENCE)
-
-enum class LoadingStatus(val description: String) {
-    ABSENCE("отсутствие данных"),
-    LOADING("загрузка данных"),
-    AVAILABILITY("наличие загруженных данных")
-}
+data class MainScreenState(val data: String?, val loadingStatus: Boolean = false)
