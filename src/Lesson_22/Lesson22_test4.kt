@@ -7,24 +7,24 @@ fun main() {
 
 class MainScreenViewModel {
     private val _mainScreenState = MainScreenState("---abstract data---")
-    lateinit var mainScreenState: MainScreenState
+    var mainScreenState = MainScreenState(null)
 
     fun loadData() {
         Thread.sleep(1000)
-        mainScreenState = _mainScreenState
+        mainScreenState =_mainScreenState
             .copy(data = null)
         println(mainScreenState)
 
         Thread.sleep(1000)
-        mainScreenState = _mainScreenState
-            .copy(data = null, loadingStatus = true)
+        mainScreenState = mainScreenState
+            .copy(isLoading = true)
         println(mainScreenState)
 
         Thread.sleep(1000)
         mainScreenState = _mainScreenState
-            .copy(loadingStatus = false)
+            .copy(data = _mainScreenState.component1(),isLoading = false)
         println(mainScreenState)
     }
 }
 
-data class MainScreenState(val data: String?, val loadingStatus: Boolean = false)
+data class MainScreenState(val data: String?, val isLoading: Boolean = false)
