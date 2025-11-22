@@ -1,4 +1,5 @@
 package Lesson_22
+
 import java.time.LocalDateTime
 
 fun main() {
@@ -13,9 +14,7 @@ fun main() {
         LocalDateTime.now(),
         4.367f
     )
-
-    val (_, description) = starSystem
-    println( description )
+    println(starSystem.component2())
 }
 
 data class GalacticGuide(
