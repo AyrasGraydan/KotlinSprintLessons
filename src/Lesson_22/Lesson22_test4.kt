@@ -6,13 +6,10 @@ fun main() {
 }
 
 class MainScreenViewModel {
-    private val _mainScreenState = MainScreenState("---abstract data---")
     var mainScreenState = MainScreenState(null)
 
     fun loadData() {
         Thread.sleep(1000)
-        mainScreenState =_mainScreenState
-            .copy(data = null)
         println(mainScreenState)
 
         Thread.sleep(1000)
@@ -21,8 +18,8 @@ class MainScreenViewModel {
         println(mainScreenState)
 
         Thread.sleep(1000)
-        mainScreenState = _mainScreenState
-            .copy(data = _mainScreenState.component1(),isLoading = false)
+        mainScreenState = mainScreenState
+            .copy(data = "---abstract data---", isLoading = false)
         println(mainScreenState)
     }
 }
